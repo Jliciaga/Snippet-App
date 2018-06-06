@@ -6,13 +6,15 @@ html, body {
   font-family: 'Poppins', sans-serif;
   color: #222;
 }
-
+li {
+  cursor: pointer;
+}
 textarea {
   resize:none;
 }
 
 .navbar {
-  padding: .8rem;
+  padding: 1rem;
 }
 
 .navbar-nav li {
@@ -163,7 +165,7 @@ hr.light-100 {
     font-size: 4em;
     padding:2rem;
   }
-  }
+}
 
 @media (max-width: 768px) {
   .carousel-caption {
@@ -193,6 +195,7 @@ hr.light-100 {
   font-size:2.5rem;
   padding:1.2rem;
 }
+
 }
 @media (max-width: 576px) {
   .carousel-caption {
@@ -232,7 +235,8 @@ hr.light-100 {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
 }
-/*--- Fixed Background Image --*/
+
+/*--- Parallax effect--*/
 figure {
   position: relative;
   width: 100%;
@@ -267,9 +271,6 @@ figure {
 }
 
 
-
-
-
 /*
 Extra small (xs) devices (portrait phones, less than 576px)
 No media query since this is the default in Bootstrap
@@ -286,11 +287,3 @@ Large (lg) devices (desktops, 992px and up)
 Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 */
-
-
-
-
-
-
-
-

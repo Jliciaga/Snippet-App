@@ -47,32 +47,54 @@ $(document).ready(function() {
 		var arrayItem = {};
 		var existingArray = this.getArray(arrayName);
 		if (existingArray.length > 0) {
-			arrayItem = exisitngArray[existingArray.length - 1];
-			this.setItem(arrayName, JSON.stringify(existingArray));
+			arrayItem = existingArray[existingArray.length - 1];
 		}
 		return arrayItem;
 	}
 
 	var data ={};
-	var $snippets = $('.snippets');
+	var $snippets = $('.snippet-code');
+
 
 	function save() {
 	var name = $('#name').val();
-	var code = $('#code').val();	
+	var code = $('#code').val();
+
+	if (name === '') {
+		alert("Name is undefined!!")
+	}	
+	else {
+
 	data[name] = code;
 		localStorage.pushArrayItem('data', data);
+	}
 	}
 
 	$('#save').on('click', function() {
 	  save();
+	  window.location.reload(true);
 	});
 
-	$('#delete').on('click', function() {
-		let retrieveLatest = localStorage.popArrayItem('dataArray');
-		for (var key in retrieveLatest[key]) {
+	// $('#delete').on('click', function() {
+	// 	let retrieveLatest = localStorage.popArrayItem('dataArray');
+	// 	for (var key in retrieveLatest[key]) {
 
-		}
-	});
+	// 	}
+	// });
+
+	$('#latest').on('click',function() {
+		var retrieveLast = localStorage.getLastItem('data');
+		var key = Object.keys(retrieveLast)[0];
+		var value = Object.values(retrieveLast)[0];
+		console.log(key)
+
+		$('.snippet-name').append(key);
+
+		$late = $('<div id="snippets"></div>');
+		$late.html('<pre class="prettyprint">'+ value + '</pre>');
+		$late.prependTo($snippets);
+
+	})
 
 	
 

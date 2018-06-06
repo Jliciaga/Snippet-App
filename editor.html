@@ -13,6 +13,7 @@
 	<link href="style.css" rel="stylesheet">
 	<link rel="shortcut icon" href="img/icon.ico">
 	<script type="text/javascript" src="app.js"></script>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
 <body>
 
@@ -52,16 +53,16 @@
 			<div class="collapse navbar-collapse" id="navbarResponsiveTwo">
 				<ul class="navbar-nav navbar-left mr-auto">
 					<li class="save nav-item" id="save">
-						<a class="nav-link" href="">Save</a>
+						<a class="nav-link">Save</a>
 					</li>
 					<li class="delete nav-item" id="delete">
-						<a class="nav-link" href="">Delete</a>
+						<a class="nav-link">Delete</a>
 					</li>
-					<li class="latest nav-item">
-						<a class="nav-link" href="#">Lastest Snippet</a>
+					<li class="latest nav-item" id="latest">
+						<a class="nav-link" href="#snippets">Lastest Snippet</a>
 					</li>
 					<li class="recall nav-item">
-						<a class="nav-link" href="#">Recall & Delete</a>
+						<a class="nav-link" href="#">Recall Latest & Delete</a>
 					</li>
 				</ul>
 				<form class="navbar-form">
@@ -87,9 +88,25 @@
 						<label for="code">Code</label>
 						<textarea class="form-control noresize" id="code" rows="6" col="5" placeholder="code away..."></textarea>
 					</div>
+					<div class="form-group">
+						<label for="output">Snippets</label>
+						<textarea class="form-control noresize" id="output" rows="6" col="5" placeholder=""></textarea>
+					</div>
+
 		</div>
 		</form>
 	</div>
+
+	<div class="container-fluid padding">
+		<div class ="row text-left">
+			<div class="col-md-6">
+				<div class = "snippet-name"></div>
+				<div class="snippet-code">
+			</div>
+			</div>
+		</div>
+	</div>
+
 
 </body>
 </html>
