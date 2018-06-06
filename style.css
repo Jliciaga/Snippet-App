@@ -287,3 +287,26 @@ Large (lg) devices (desktops, 992px and up)
 Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 */
+
+
+/* Editor */
+
+/*.form {
+  padding: 10px 10px;
+}
+*/
+#input-name {
+  padding: 10px 10px;
+}
+
+#input-code {
+  padding:10px 10px;
+}
+
+#code {
+  padding: 10px 10px;
+}
+
+#name {
+  padding-bottom: 20px;
+}

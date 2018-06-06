@@ -80,20 +80,50 @@ $(document).ready(function() {
 	});
 
 	$('#latest').on('click',function() {
+
+		// window.setTimeout(function() {
+		// 	var retrieveLast = localStorage.getLastItem('data');
+		// 	var key = Object.keys(retrieveLast)[0];
+		// 	var value = Object.values(retrieveLast)[0]; 
+
+		// 	$('<pre>')
+		// 	.html(prettyPrintOne(key, value))
+		// 	.addClass('prettyprint lang-js prettyprinted')
+		// 	.appendTo('.snippet-code')
+		// }, 200)
 		var retrieveLast = localStorage.getLastItem('data');
 		var key = Object.keys(retrieveLast)[0];
 		var value = Object.values(retrieveLast)[0];
 		console.log(key)
 
 		$('.snippet-name').append(key);
+		$('.prettyprint').append(value);
 
-		$late = $('<div id="snippets"></div>');
-		$late.html('<pre class="prettyprint">'+ value + '</pre>');
-		$late.prependTo($snippets);
+		// $late = $('<div id="snippets"></div>');
+		// $late.html('<pre class="prettyprint">'+ value + '</pre>');
+		// $late.prependTo($snippets);
 
-	})
+	});
 
 	
 
 
-})
+});
+
+
+function search() {
+var input, filter, ul, li, a, i
+input = getElementById('myInput')
+filter = input.value.toUpperCase();
+ul = document.getElementById('wrapper')
+li=ul.getElementByTagName('li')
+
+for (i = 0; i < li.length; i++) {
+	if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+		li[i].style.display = "";
+	}
+	else {
+		li[i].style.display = "none";
+	}
+}
+}
