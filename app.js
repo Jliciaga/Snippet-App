@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	
 	Storage.prototype.getArray = function(arrayName) {
 		var thisArray = [];
 		var fetchArrayObject = this.getItem(arrayName);
@@ -16,7 +17,7 @@ $(document).ready(function() {
 		this.setItem(arrayName, JSON.stringify(existingArray));
 	}
 
-	Storage.prototype.popArrayItem = function() {
+	Storage.prototype.popArrayItem = function(arrayName) {
 		var arrayItem = {};
 		var existingArray = this.getArray(arrayName);
 		if(existingArray.length > 0) {
@@ -52,11 +53,13 @@ $(document).ready(function() {
 		return arrayItem;
 	}
 
+
+
 	var data ={};
 	var $snippets = $('.snippet-code');
 
 
-	function save() {
+	var save = () => {
 	var name = $('#name').val();
 	var code = $('#code').val();
 
@@ -70,6 +73,15 @@ $(document).ready(function() {
 	}
 	}
 
+	/*var recall = () => {
+		var retrieveLast = localStorage.getLastItem('data');
+		var $snippet = $('div class="code"></div>');
+		$snippet.html('<pre class="')
+	}
+	*/
+
+
+
 	$('#save').on('click', function() {
 	  save();
 	  window.location.reload(true);
@@ -82,20 +94,17 @@ $(document).ready(function() {
 	$('#latest').on('click',function() {
 
 		// window.setTimeout(function() {
-		// 	var retrieveLast = localStorage.getLastItem('data');
-		// 	var key = Object.keys(retrieveLast)[0];
-		// 	var value = Object.values(retrieveLast)[0]; 
+			var retrieveLast = localStorage.getLastItem('data');
+			var key = Object.keys(retrieveLast)[0];
+			var value = Object.values(retrieveLast)[0]; 
 
 		// 	$('<pre>')
 		// 	.html(prettyPrintOne(key, value))
 		// 	.addClass('prettyprint lang-js prettyprinted')
-		// 	.appendTo('.snippet-code')
+		// 	.appendTo('.prettyprint lang-js prettyprinted')
 		// }, 200)
-		var retrieveLast = localStorage.getLastItem('data');
-		var key = Object.keys(retrieveLast)[0];
-		var value = Object.values(retrieveLast)[0];
-		console.log(key)
-
+		// 
+	
 		$('.snippet-name').append(key);
 		$('.prettyprint').append(value);
 
@@ -105,7 +114,14 @@ $(document).ready(function() {
 
 	});
 
-	
+	$('#recall').on('click', function() {
+		var retrieveLast = localStorage.popArrayItem('data');
+		var key = Object.keys(retrieveLast)[0];
+		var value = Object.values(retrieveLast)[0];
+
+		$('.snippet-name').append(key);
+		$('.prettyprint').append(value);
+	})
 
 
 });

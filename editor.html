@@ -17,13 +17,13 @@
 	<script type="text/javascript" src="libs/prettify.js"></script>
 	<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autorun=true"></script> -->
 </head>
-<body onload="PR.prettyPrint()">
+<body>
 
 	<!-- Navigation -->
 
 	<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 		<div class="container-fluid">
-			<a class="navbar-brand" class="reload">SNIPPET EDITOR<!-- <img src="img/"> --></a>
+			<a class="navbar-brand" href="#">SNIPPET EDITOR<!-- <img src="img/"> --></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -63,8 +63,8 @@
 					<li class="latest nav-item" id="latest">
 						<a class="nav-link" href="#snippets">Lastest Snippet</a>
 					</li>
-					<li class="recall nav-item">
-						<a class="nav-link" href="#">Recall Latest & Delete</a>
+					<li class="recall nav-item" id="recall">
+						<a class="nav-link" href="#snippets">Recall & Delete Latest</a>
 					</li>
 				</ul>
 				<form class="navbar-form">
@@ -94,23 +94,25 @@
 						<label for="output">Snippets</label>
 						<textarea class="form-control noresize" id="output" rows="6" col="5" placeholder="under construction..."></textarea>
 					</div> -->
-
-		</div>
 		</form>
 	</div>
+</div>
+</div>
 
-	<div class="container-fluid padding">
-		<div class ="row text-right">
-			<div class="col-md-6">
-				<div class = "snippet-name"></div>
-				<?prettify linenums=true?>
+<div class="container-fluid padding">
+	<div class ="row text-left padding">
+		<div class="col-md-6">
+			<div class = "snippet-name"></div>
+			<div class="snippet-code"> Output:
+				<?prettify libs/linenums=true?>
 				<pre class="prettyprint linenums=40">
 					
 				</pre>
 			</div>
-			</div>
 		</div>
 	</div>
+</div>
+
 
 
 </body>
