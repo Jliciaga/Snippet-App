@@ -75,12 +75,9 @@ $(document).ready(function() {
 	  window.location.reload(true);
 	});
 
-	// $('#delete').on('click', function() {
-	// 	let retrieveLatest = localStorage.popArrayItem('dataArray');
-	// 	for (var key in retrieveLatest[key]) {
-
-	// 	}
-	// });
+	$('#delete').on('click', function() {
+	window.prompt('snippet name', 'snippet to delete')
+	});
 
 	$('#latest').on('click',function() {
 		var retrieveLast = localStorage.getLastItem('data');
