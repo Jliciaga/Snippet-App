@@ -95,7 +95,7 @@ $(document).ready(function() {
 
 		// window.setTimeout(function() {
 			var retrieveLast = localStorage.getLastItem('data');
-			var key = Object.keys(retrieveLast)[0];
+			var key = 'Output:' + ' ' + Object.keys(retrieveLast)[0];
 			var value = Object.values(retrieveLast)[0]; 
 
 		// 	$('<pre>')
@@ -116,7 +116,7 @@ $(document).ready(function() {
 
 	$('#recall').on('click', function() {
 		var retrieveLast = localStorage.popArrayItem('data');
-		var key = Object.keys(retrieveLast)[0];
+		var key = 'Output:' + ' ' +  Object.keys(retrieveLast)[0];
 		var value = Object.values(retrieveLast)[0];
 
 		$('.snippet-name').append(key);
