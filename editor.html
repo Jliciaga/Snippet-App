@@ -11,6 +11,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link href="style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="img/icon.ico">
+	<script type="text/javascript" src="app.js"></script>
 </head>
 <body>
 
@@ -43,21 +45,22 @@
 		<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 		<div class="container-fluid">
 			<!-- <a class="navbar-brand" href="#">EDITOR<img src="img/"></a> -->
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsiveTwo">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="index.html">Save</a>
+
+			<div class="collapse navbar-collapse" id="navbarResponsiveTwo">
+				<ul class="navbar-nav navbar-left mr-auto">
+					<li class="save nav-item" id="save">
+						<a class="nav-link" href="">Save</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="editor.html">Delete</a>
+					<li class="delete nav-item" id="delete">
+						<a class="nav-link" href="">Delete</a>
 					</li>
-					<li class="nav-item">
+					<li class="latest nav-item">
 						<a class="nav-link" href="#">Lastest Snippet</a>
 					</li>
-					<li class="nav-item">
+					<li class="recall nav-item">
 						<a class="nav-link" href="#">Recall & Delete</a>
 					</li>
 				</ul>
@@ -73,13 +76,17 @@
 
 
 	<div class="container-fluid padding">
-		<div class ="row">
+		<div class ="row text-left padding">
 			<div class="col-md-6">
-				<form role="form">
+				<form role="form-group">
+					<div class="form">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" id="name" placeholder="Name it...">
+					</div>
 					<div class="form-group">
-						<label for="name">Code</label>
-						<textarea class="form-control noresize" id="name" rows="6" col="5" placeholder="code away..."></textarea>
-			</div>
+						<label for="code">Code</label>
+						<textarea class="form-control noresize" id="code" rows="6" col="5" placeholder="code away..."></textarea>
+					</div>
 		</div>
 		</form>
 	</div>
